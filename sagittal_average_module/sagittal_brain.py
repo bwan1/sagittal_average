@@ -22,7 +22,7 @@ def run_averages(file_input, file_output):
     sagittal_averages = []
     # let's use NumPy! It's faster!!
     planes = np.array(planes)
-    averages = np.mean(planes, axis=0)
+    averages = np.mean(planes, axis=1)
     # Convert the np array into a list
     averages = [str(x) for x in averages]
 
