@@ -6,6 +6,12 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+# -- Path setup --------------------------------------------------------------
+
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+
 project = 'Sagittal Average'
 copyright = '2022, BW'
 author = 'BW'
@@ -13,7 +19,7 @@ author = 'BW'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx.ext.autodoc']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

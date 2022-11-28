@@ -11,6 +11,8 @@ Calculates and outputs the sagittal average of a brain sample.
    :maxdepth: 2
    :caption: Contents:
 
+   /content/sagittal-brain-docs
+
 
 
 Indices and tables
