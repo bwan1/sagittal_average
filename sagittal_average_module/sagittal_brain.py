@@ -1,3 +1,4 @@
+"""Computation of sagittal averages of a brain sample"""
 import numpy as np
 
 
@@ -8,6 +9,14 @@ def run_averages(file_input, file_output):
     The rows are intersections of the sagittal/horizontal planes
 
     The result is an average for each sagittal/horizontal plane (rows)
+
+    Parameters
+    ----------
+    file_input: str
+        Name of csv file with the brain sample
+
+    file_output: str
+        Name of csv file for the sagittal averages to be outputted in
     """
     # Open the file to analyse
     if file_input is None:
@@ -19,7 +28,6 @@ def run_averages(file_input, file_output):
             planes.append([int(x) for x in line.split("\n")[0].split(",")])
 
     # Create new list to save the averages per each plane
-    sagittal_averages = []
     # let's use NumPy! It's faster!!
     planes = np.array(planes)
     averages = np.mean(planes, axis=1)
@@ -31,4 +39,3 @@ def run_averages(file_input, file_output):
         file_output = "brain_average.csv"
     with open(file_output, "w") as myoutput:
         myoutput.write(",".join(averages) + "\n")
-
